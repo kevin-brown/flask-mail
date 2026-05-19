@@ -19,6 +19,33 @@ dependencies = [
     "blinker",
 ]
 
+[dependency-groups]
+build = [
+    "build>=1.2.2.post1",
+]
+dev = [
+    "pre-commit>=3.5.0",
+    "tox>=4.25.0",
+    "tox-uv>=1.13.1",
+    {include-group = "docs"},
+    {include-group = "tests"},
+    {include-group = "typing"},
+]
+docs = [
+    "furo>=2024.8.6",
+    "myst-parser>=3.0.1",
+    "sphinx>=7.1.2",
+    "sphinxcontrib-log-cabinet>=1.0.1",
+]
+tests = [
+    "pytest>=8.3.5",
+]
+typing = [
+    "mypy>=1.14.1",
+    "pyright>=1.1.409",
+    "pytest>=8.3.5",
+]
+
 [project.urls]
 Documentation = "https://flask-mail.readthedocs.io"
 Changes = "https://flask-mail.readthedocs.io/en/latest/changes/"
@@ -80,6 +107,9 @@ select = [
 [tool.ruff.lint.isort]
 force-single-line = true
 order-by-type = false
+
+[tool.uv]
+default-groups = ["dev", "tests", "typing"]
 
 [tool.gha-update]
 tag-only = [
