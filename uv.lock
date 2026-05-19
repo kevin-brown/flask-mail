@@ -639,7 +639,6 @@ dependencies = [
     { name = "click", version = "8.1.8", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*'" },
     { name = "click", version = "8.4.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
     { name = "importlib-metadata", version = "8.7.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.9.*'" },
-    { name = "importlib-metadata", version = "9.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_version < '0'" },
     { name = "itsdangerous", marker = "python_full_version >= '3.9'" },
     { name = "jinja2", marker = "python_full_version >= '3.9'" },
     { name = "markupsafe", version = "3.0.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.9'" },
@@ -721,25 +720,25 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-build = [{ name = "build", specifier = ">=1.2.2.post1" }]
+build = [{ name = "build" }]
 dev = [
-    { name = "pre-commit", specifier = ">=3.5.0" },
-    { name = "tox", specifier = ">=4.25.0" },
-    { name = "tox-uv", specifier = ">=1.13.1" },
+    { name = "pre-commit" },
+    { name = "tox" },
+    { name = "tox-uv" },
 ]
 docs = [
-    { name = "furo", specifier = ">=2024.8.6" },
-    { name = "myst-parser", specifier = ">=3.0.1" },
-    { name = "sphinx", specifier = ">=7.1.2" },
-    { name = "sphinxcontrib-log-cabinet", specifier = ">=1.0.1" },
+    { name = "furo" },
+    { name = "myst-parser" },
+    { name = "sphinx" },
+    { name = "sphinxcontrib-log-cabinet" },
 ]
-gha-update = [{ name = "gha-update", marker = "python_full_version > '3.12'", specifier = ">=0.2.0" }]
-pre-commit = [{ name = "pre-commit", specifier = ">=3.5.0" }]
-tests = [{ name = "pytest", specifier = ">=8.3.5" }]
+gha-update = [{ name = "gha-update", marker = "python_full_version > '3.12'" }]
+pre-commit = [{ name = "pre-commit" }]
+tests = [{ name = "pytest" }]
 typing = [
-    { name = "mypy", specifier = ">=1.14.1" },
-    { name = "pyright", specifier = ">=1.1.409" },
-    { name = "pytest", specifier = ">=8.3.5" },
+    { name = "mypy" },
+    { name = "pyright" },
+    { name = "pytest" },
 ]
 
 [[package]]
@@ -953,7 +952,7 @@ resolution-markers = [
     "python_full_version == '3.10.*'",
 ]
 dependencies = [
-    { name = "zipp", version = "4.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10' and python_full_version <= '3.12'" },
+    { name = "zipp", version = "4.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.10.*'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/a9/01/15bb152d77b21318514a96f43af312635eb2500c96b55398d020c93d86ea/importlib_metadata-9.0.0.tar.gz", hash = "sha256:a4f57ab599e6a2e3016d7595cfd72eb4661a5106e787a95bcc90c7105b831efc", size = 56405, upload-time = "2026-03-20T06:42:56.999Z" }
 wheels = [

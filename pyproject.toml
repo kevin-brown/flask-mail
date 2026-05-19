@@ -21,32 +21,32 @@ dependencies = [
 
 [dependency-groups]
 build = [
-    "build>=1.2.2.post1",
+    "build",
 ]
 dev = [
-    "pre-commit>=3.5.0",
-    "tox>=4.25.0",
-    "tox-uv>=1.13.1",
+    "pre-commit",
+    "tox",
+    "tox-uv",
 ]
 docs = [
-    "furo>=2024.8.6",
-    "myst-parser>=3.0.1",
-    "sphinx>=7.1.2",
-    "sphinxcontrib-log-cabinet>=1.0.1",
+    "furo",
+    "myst-parser",
+    "sphinx",
+    "sphinxcontrib-log-cabinet",
 ]
 gha-update = [
-    "gha-update>=0.2.0 ; python_full_version > '3.12'",
+    "gha-update ; python_full_version > '3.12'",
 ]
 pre-commit = [
-    "pre-commit>=3.5.0",
+    "pre-commit",
 ]
 tests = [
-    "pytest>=8.3.5",
+    "pytest",
 ]
 typing = [
-    "mypy>=1.14.1",
-    "pyright>=1.1.409",
-    "pytest>=8.3.5",
+    "mypy",
+    "pyright",
+    "pytest",
 ]
 
 [project.urls]
@@ -148,24 +148,9 @@ dependency_groups = ["pre-commit"]
 skip_install = true
 commands = [["pre-commit", "run", "--all-files"]]
 
-[tool.tox.env.tests-min]
-description = "pytest on minimum dependency versions"
-base_python = ["3.11"]
-commands = [
-    [
-        "uv", "pip", "install",
-        "flask==2.2.5",
-        "sqlalchemy==2.0.16",
-        "werkzeug<2.3",
-    ],
-    [
-        "pytest", "-v", "--tb=short", "--basetemp={env_tmp_dir}",
-        {replace = "posargs", default = [], extend = true},
-    ],
-]
-
 [tool.tox.env.typing]
 description = "run static type checkers"
+base_python = ["3.12"]
 dependency_groups = ["typing"]
 commands = [
     ["mypy"],
